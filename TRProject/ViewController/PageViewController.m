@@ -42,7 +42,7 @@
 }
 
 -(NSArray<NSString *> *)titles{
-    return  @[@"首页",@"新闻",@"养生",@"美容",@"情感",@"饮食",@"失眠",@"精神心理",@"中医"];
+    return  @[@"首页",@"新闻",@"养生",@"美容",@"情感",@"饮食",@"失眠",@"心理",@"中医"];
 }
 
 -(NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController{
@@ -89,15 +89,4 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

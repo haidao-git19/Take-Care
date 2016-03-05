@@ -10,12 +10,9 @@
 
 @interface DetailViewController () <UIWebViewDelegate>
 @property (nonatomic) UIWebView *webView;
-
-
 @end
 
 @implementation DetailViewController
-
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

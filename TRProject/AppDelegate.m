@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+System.h"
 #import "HealthNetManager.h"
-#import "PageViewController.h"
-#import "LeftViewController.h"
+#import "LeftTableViewController.h"
 #import <RESideMenu.h>
 #import "LeftTableViewController.h"
 
@@ -24,11 +23,11 @@
     [self setupGlobalConfig];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    PageViewController *pageVC = [PageViewController shareVC];
+    _pageVC = [PageViewController shareVC];
     LeftTableViewController *leftVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LeftTableViewController"];
     
-    RESideMenu *menu = [[RESideMenu alloc] initWithContentViewController:pageVC.navi leftMenuViewController:leftVC.navi rightMenuViewController:nil];
-    pageVC.menuViewStyle = WMMenuViewStyleLine;
+    RESideMenu *menu = [[RESideMenu alloc] initWithContentViewController:_pageVC.navi leftMenuViewController:leftVC rightMenuViewController:nil];
+    _pageVC.menuViewStyle = WMMenuViewStyleLine;
     
     menu.scaleContentView = NO;
     menu.panGestureEnabled = YES;

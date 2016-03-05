@@ -8,10 +8,12 @@
 
 
 #import <AFNetworkReachabilityManager.h>
+#import "PageViewController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, getter=isOnLine) BOOL onLine;
 @property (nonatomic) AFNetworkReachabilityStatus netReachStatus;
+@property (nonatomic) PageViewController *pageVC;
 @end
 

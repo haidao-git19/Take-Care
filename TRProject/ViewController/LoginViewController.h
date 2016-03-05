@@ -1,0 +1,17 @@
+//
+//  LoginViewController.h
+//  TRProject
+//
+//  Created by Adrift on 16/3/5.
+//  Copyright © 2016年 Tarena. All rights reserved.
+//
+
+#import "ViewController.h"
+
+@interface LoginViewController : ViewController
+
+@property (nonatomic) UINavigationController *navi;
+
++ (LoginViewController *) shareLoginVC;
+
+@end
