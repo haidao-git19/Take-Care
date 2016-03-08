@@ -8,6 +8,7 @@
 
 #import "LeftTableViewController.h"
 #import "LoginViewController.h"
+#import "PageViewController.h"
 
 @interface LeftTableViewController ()
 
@@ -20,15 +21,6 @@
     [super viewDidLoad];
     self.tableView.scrollEnabled = NO;
 }
-
-//- (instancetype)initWithCoder:(NSCoder *)aDecoder{
-//    if (self = [super initWithCoder:aDecoder]) {
-//        self.navi = [[UINavigationController alloc]initWithRootViewController:self];
-//        self.navigationController.navigationBar.translucent  = YES;
-//        self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
-//    }
-//    return  self;
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -43,22 +35,23 @@
     NSLog(@"*********%ld*******%ld",section,row);
     if (section == 0) {
         switch (row) {
-            case 1:
-                [self.sideMenuViewController setContentViewController:kAppdelegate.pageVC.navi];
+            case 1:{
+                PageViewController *vc = [PageViewController shareVC];
+//                [self.sideMenuViewController setContentViewController:vc.navi];
                 [self.sideMenuViewController hideMenuViewController];
                 break;
+            }
+            
             case 2:
                 //热门专题
                 break;
             case 3:{
-                LoginViewController *vc = [LoginViewController shareLoginVC];
+                LoginViewController *vc = [LoginViewController shareVC];
                 [self.sideMenuViewController setContentViewController:vc.navi];
                 [self.sideMenuViewController hideMenuViewController];
                 break;
             }
- 
-                break;
-            case 4:
+             case 4:
                 
                 break;
             case 5:

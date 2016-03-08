@@ -23,11 +23,10 @@
     [self setupGlobalConfig];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    _pageVC = [PageViewController shareVC];
+    PageViewController *pageVC = [PageViewController shareVC];
     LeftTableViewController *leftVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LeftTableViewController"];
-    
-    RESideMenu *menu = [[RESideMenu alloc] initWithContentViewController:_pageVC.navi leftMenuViewController:leftVC rightMenuViewController:nil];
-    _pageVC.menuViewStyle = WMMenuViewStyleLine;
+    RESideMenu *menu = [[RESideMenu alloc] initWithContentViewController:pageVC.navi leftMenuViewController:leftVC rightMenuViewController:nil];
+    pageVC.menuViewStyle = WMMenuViewStyleLine;
     
     menu.scaleContentView = NO;
     menu.panGestureEnabled = YES;

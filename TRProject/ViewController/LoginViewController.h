@@ -12,6 +12,5 @@
 
 @property (nonatomic) UINavigationController *navi;
 
-+ (LoginViewController *) shareLoginVC;
-
++ (LoginViewController *)shareVC;
 @end
