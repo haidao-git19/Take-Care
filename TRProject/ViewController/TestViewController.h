@@ -1,14 +1,15 @@
 //
-//  LeftTableViewController.h
+//  TestViewController.h
 //  TRProject
 //
-//  Created by tarena on 16/3/4.
+//  Created by tarena on 16/3/9.
 //  Copyright © 2016年 Tarena. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface LeftTableViewController : UITableViewController
+@interface TestViewController : UIViewController
 @property (nonatomic) UINavigationController *navi;
-+ (instancetype) shareVC;
++ (TestViewController *) shareVC;
+
 @end

@@ -92,7 +92,7 @@
                 <outlet property="replyCount" destination="nZi-QR-nsF" id="XwI-bM-yCd"/>
                 <outlet property="title" destination="5ls-gl-A05" id="ZU6-Cr-p4Q"/>
             </connections>
-            <point key="canvasLocation" x="845.5" y="376"/>
+            <point key="canvasLocation" x="737.5" y="343"/>
         </tableViewCell>
     </objects>
     <resources>

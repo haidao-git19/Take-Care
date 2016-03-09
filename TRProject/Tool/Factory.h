@@ -10,5 +10,9 @@
 
 @interface Factory : NSObject
 + (void)addBackItemToVC:(UIViewController *)vc;
++ (void) addBackItem:(UIViewController *)vc;
 + (NSString *)md5:(NSString *)str;
+
++ (void) addBackItemForSecond:(UIViewController *)vc;
++ (void) addBackItemForFirst:(UIViewController *)vc;
 @end

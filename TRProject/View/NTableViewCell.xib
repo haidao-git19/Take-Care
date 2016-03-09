@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,12 +16,14 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNx-eF-IZM">
                         <rect key="frame" x="8" y="8" width="304" height="21"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阅读 999万" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-08-LmY">
                         <rect key="frame" x="22" y="42" width="61" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="61" id="99j-eS-0Dv"/>
                             <constraint firstAttribute="height" constant="21" id="TYN-bH-lfF"/>
@@ -32,6 +34,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999-99-99 99:99:99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWg-HF-RJL">
                         <rect key="frame" x="102" y="42" width="122" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="122" id="aXr-dg-Qu2"/>
                             <constraint firstAttribute="height" constant="21" id="waE-wH-joh"/>
@@ -42,6 +45,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time" translatesAutoresizingMaskIntoConstraints="NO" id="O5n-Oj-AtF">
                         <rect key="frame" x="88" y="47" width="12" height="12"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="CVI-SK-y31"/>
                             <constraint firstAttribute="width" constant="12" id="Qjs-2q-qFZ"/>
@@ -49,12 +53,14 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close_eye" translatesAutoresizingMaskIntoConstraints="NO" id="iWg-K8-pi7">
                         <rect key="frame" x="8" y="49" width="12" height="8"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="12" id="197-Zi-vAc"/>
                             <constraint firstAttribute="height" constant="8" id="zAp-0c-zg8"/>
                         </constraints>
                     </imageView>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="aWg-HF-RJL" firstAttribute="centerY" secondItem="gaj-08-LmY" secondAttribute="centerY" id="B9b-ag-Xg7"/>
                     <constraint firstItem="O5n-Oj-AtF" firstAttribute="leading" secondItem="gaj-08-LmY" secondAttribute="trailing" constant="5" id="JKN-UP-vOz"/>
@@ -70,12 +76,13 @@
                     <constraint firstItem="vNx-eF-IZM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qR6-bc-POj"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="articleAddTime" destination="aWg-HF-RJL" id="d5K-6q-6AK"/>
                 <outlet property="replyCount" destination="gaj-08-LmY" id="hdi-vU-0hq"/>
                 <outlet property="title" destination="vNx-eF-IZM" id="S3X-Ng-Oje"/>
             </connections>
-            <point key="canvasLocation" x="511" y="211"/>
+            <point key="canvasLocation" x="375" y="250"/>
         </tableViewCell>
     </objects>
     <resources>

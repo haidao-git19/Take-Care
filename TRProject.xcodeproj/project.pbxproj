@@ -31,7 +31,10 @@
 		56F67D041C87458100DE48AE /* NTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F67D021C87458100DE48AE /* NTableViewCell.m */; };
 		56F67D051C87458100DE48AE /* NTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56F67D031C87458100DE48AE /* NTableViewCell.xib */; };
 		7BADFFA4FF0A3162B67E0831 /* libPods-TRProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8759E2D9A62BE10618FCC99C /* libPods-TRProject.a */; };
+		850E95811C8FBAF1002EBE08 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850E95801C8FBAF1002EBE08 /* TestViewController.m */; };
 		856871CC1C8714D100AF71B3 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856871CB1C8714D100AF71B3 /* PageViewController.m */; };
+		857EF3711C8FD21200B9D0BB /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857EF3701C8FD21200B9D0BB /* RegisterViewController.m */; };
+		857EF3741C8FF44E00B9D0BB /* MessageNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 857EF3731C8FF44E00B9D0BB /* MessageNetManager.m */; };
 		85CDD85F1C8965E4005697E5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDD85E1C8965E4005697E5 /* DetailViewController.m */; };
 		85CDD8651C897D8D005697E5 /* LeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDD8641C897D8D005697E5 /* LeftTableViewController.m */; };
 		85EEE30D1C8668AF00F9855B /* OTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EEE30B1C8668AF00F9855B /* OTableViewCell.m */; };
@@ -88,8 +91,14 @@
 		56F67D031C87458100DE48AE /* NTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTableViewCell.xib; sourceTree = "<group>"; };
 		70276005029EE88E7F2474B9 /* Pods-TRProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRProject/Pods-TRProject.release.xcconfig"; sourceTree = "<group>"; };
 		7BA1DBF911CCDD099DBC3032 /* Pods-TRProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRProject/Pods-TRProject.debug.xcconfig"; sourceTree = "<group>"; };
+		850E957F1C8FBAF1002EBE08 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		850E95801C8FBAF1002EBE08 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		856871CA1C8714D100AF71B3 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		856871CB1C8714D100AF71B3 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		857EF36F1C8FD21200B9D0BB /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		857EF3701C8FD21200B9D0BB /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		857EF3721C8FF44E00B9D0BB /* MessageNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNetManager.h; sourceTree = "<group>"; };
+		857EF3731C8FF44E00B9D0BB /* MessageNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNetManager.m; sourceTree = "<group>"; };
 		85CDD85D1C8965E4005697E5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		85CDD85E1C8965E4005697E5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		85CDD8631C897D8D005697E5 /* LeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewController.h; sourceTree = "<group>"; };
@@ -160,6 +169,8 @@
 			children = (
 				562166941C8607F600680025 /* HealthNetManager.h */,
 				562166951C8607F600680025 /* HealthNetManager.m */,
+				857EF3721C8FF44E00B9D0BB /* MessageNetManager.h */,
+				857EF3731C8FF44E00B9D0BB /* MessageNetManager.m */,
 			);
 			path = NetManager;
 			sourceTree = "<group>";
@@ -221,6 +232,10 @@
 				85CDD8641C897D8D005697E5 /* LeftTableViewController.m */,
 				5614A1DC1C8F1ACB00211A55 /* LoginViewController.h */,
 				5614A1DD1C8F1ACB00211A55 /* LoginViewController.m */,
+				850E957F1C8FBAF1002EBE08 /* TestViewController.h */,
+				850E95801C8FBAF1002EBE08 /* TestViewController.m */,
+				857EF36F1C8FD21200B9D0BB /* RegisterViewController.h */,
+				857EF3701C8FD21200B9D0BB /* RegisterViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -436,6 +451,7 @@
 				382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */,
 				38A1A3511C74560D007EEEB7 /* PSCollectionViewCell.m in Sources */,
 				56F67D041C87458100DE48AE /* NTableViewCell.m in Sources */,
+				850E95811C8FBAF1002EBE08 /* TestViewController.m in Sources */,
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
 				38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */,
 				38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */,
@@ -444,6 +460,8 @@
 				38A1A3481C745317007EEEB7 /* UIScrollView+Refresh.m in Sources */,
 				382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */,
 				85EEE3121C8668C700F9855B /* TTableViewCell.m in Sources */,
+				857EF3741C8FF44E00B9D0BB /* MessageNetManager.m in Sources */,
+				857EF3711C8FD21200B9D0BB /* RegisterViewController.m in Sources */,
 				38ADA3B81C626AAF0093502F /* main.m in Sources */,
 				562166961C8607F600680025 /* HealthNetManager.m in Sources */,
 				85EEE31C1C86A71F00F9855B /* HealthViewModel.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import "Factory.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "PageViewController.h"
+
 @implementation Factory
 + (NSString *)md5:(NSString *)str
 {
@@ -38,4 +40,40 @@
     spaceItem.width = -15;
     vc.navigationItem.leftBarButtonItems = @[spaceItem,backItem];
 }
+
++ (void) addBackItemForFirst:(UIViewController *)vc{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 25, 25);
+    [button setBackgroundColor:[UIColor orangeColor]];
+    [button setImage:[UIImage imageNamed:@"icn_head_back_normal"] forState:UIControlStateNormal];
+    [button bk_addEventHandler:^(id sender) {
+        
+        PageViewController *vc = [PageViewController shareVC];
+        [vc.sideMenuViewController setContentViewController:vc.navi animated:YES];
+        [vc.sideMenuViewController hideMenuViewController];
+    } forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithCustomView:button];
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    item2.width = -10;
+    vc.navigationItem.leftBarButtonItems = @[item2,item1];
+}
+
++ (void) addBackItemForSecond:(UIViewController *)vc{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 25, 25);
+    [button setBackgroundColor:[UIColor orangeColor]];
+    [button setImage:[UIImage imageNamed:@"icn_head_back_normal"] forState:UIControlStateNormal];
+    [button bk_addEventHandler:^(id sender) {
+        [vc.navigationController popViewControllerAnimated:YES];
+        //        PageViewController *vc = [PageViewController shareVC];
+        //        [vc.sideMenuViewController setContentViewController:vc.navi animated:YES];
+        //        [vc.sideMenuViewController hideMenuViewController];
+    } forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithCustomView:button];
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    item2.width = -10;
+    vc.navigationItem.leftBarButtonItems = @[item2,item1];
+}
+
+
 @end

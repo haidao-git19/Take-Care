@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface LoginViewController : ViewController
+@interface LoginViewController : UIViewController
 
 @property (nonatomic) UINavigationController *navi;
 

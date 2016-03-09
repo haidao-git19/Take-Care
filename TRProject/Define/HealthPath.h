@@ -11,4 +11,6 @@
 
 #define kHealthPath @"http://community.111.com.cn/Api/CommunityV1_4/Articles/list"
 
+#define kMessagePath @"http://community.111.com.cn/Api/CommunityV1_4/user/phoneVerification"
+
 #endif /* HealthPath_h */

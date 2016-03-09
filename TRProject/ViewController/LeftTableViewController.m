@@ -9,6 +9,8 @@
 #import "LeftTableViewController.h"
 #import "LoginViewController.h"
 #import "PageViewController.h"
+#import "TestViewController.h"
+#import "LoginViewController.h"
 
 @interface LeftTableViewController ()
 
@@ -20,6 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.scrollEnabled = NO;
+}
+
++ (instancetype)shareVC{
+    static LeftTableViewController *vc = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LeftTableViewController"];
+        vc.navi = [[UINavigationController alloc]initWithRootViewController:vc];
+        vc.title = @"登陆";
+        vc.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    });
+    return vc;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,14 +49,20 @@
     NSLog(@"*********%ld*******%ld",section,row);
     if (section == 0) {
         switch (row) {
-            case 1:{
-                PageViewController *vc = [PageViewController shareVC];
-//                [self.sideMenuViewController setContentViewController:vc.navi];
+            case 0:{
+                LoginViewController *vc = [LoginViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi];
                 [self.sideMenuViewController hideMenuViewController];
                 break;
             }
-            
-            case 2:
+            case 1:{
+                PageViewController *vc = [PageViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi animated:YES];
+                [self.sideMenuViewController hideMenuViewController];
+                break;
+            }
+            case 2:{
+            }
                 //热门专题
                 break;
             case 3:{
@@ -51,15 +71,26 @@
                 [self.sideMenuViewController hideMenuViewController];
                 break;
             }
-             case 4:
-                
+            case 4:{
+                LoginViewController *vc = [LoginViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi];
+                [self.sideMenuViewController hideMenuViewController];
+
+            }
                 break;
-            case 5:
-                
+            case 5:{
+                LoginViewController *vc = [LoginViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi];
+                [self.sideMenuViewController hideMenuViewController];
                 break;
-            case 6:
-                
+            }
                 break;
+            case 6:{
+                LoginViewController *vc = [LoginViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi];
+                [self.sideMenuViewController hideMenuViewController];
+                break;
+            }
             default:
                 break;
         }

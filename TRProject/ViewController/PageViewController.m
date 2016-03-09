@@ -37,8 +37,6 @@
         vc.menuBGColor = [UIColor whiteColor];
         vc.menuViewStyle = WMMenuViewStyleLine;
         vc.navi.navigationBar.translucent = NO;
-        
-        UIViewController *vc = [UIViewController alloc]init
     });
     return  vc;
 }
