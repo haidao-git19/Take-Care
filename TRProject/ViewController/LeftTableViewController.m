@@ -11,8 +11,9 @@
 #import "PageViewController.h"
 #import "TestViewController.h"
 #import "LoginViewController.h"
+#import "UMSocial.h"
 
-@interface LeftTableViewController ()
+@interface LeftTableViewController () <UMSocialUIDelegate>
 
 @end
 
@@ -97,7 +98,12 @@
     }else{
         switch (row) {
             case 0:
-                
+                [UMSocialSnsService presentSnsIconSheetView:kAppdelegate.window.rootViewController.view
+                                                     appKey:@"56e00d5de0f55aeb4a000f47"
+                                                  shareText:@"我正在使用手机App[关照],推荐给你"
+                                                 shareImage:[UIImage imageNamed:@"ic_launcher.png"]
+                                            shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToQQ,nil]
+                                                   delegate:self];
                 break;
             case 1:
                 

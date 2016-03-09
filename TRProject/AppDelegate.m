@@ -13,17 +13,22 @@
 #import "LeftTableViewController.h"
 #import <RESideMenu.h>
 #import "LeftTableViewController.h"
+#import "UMSocialData.h"
+
+#define kAppKey @"56e00d5de0f55aeb4a000f47"
 
 @interface AppDelegate ()
 @end
 
 @implementation AppDelegate
 
+//Appkey: 56e00d5de0f55aeb4a000f47
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //全局默认配置
     [self setupGlobalConfig];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    
+    [UMSocialData setAppKey:kAppKey];
     PageViewController *pageVC = [PageViewController shareVC];
     LeftTableViewController *leftVC = [LeftTableViewController shareVC];
     
