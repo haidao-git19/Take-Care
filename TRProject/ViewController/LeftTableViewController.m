@@ -7,13 +7,15 @@
 //
 
 #import "LeftTableViewController.h"
-#import "LoginViewController.h"
 #import "PageViewController.h"
-#import "TestViewController.h"
-#import "LoginViewController.h"
-#import "UMSocial.h"
+#import "SuggestViewController.h"
+#import "SettingTableViewController.h"
+#import "TopicViewController.h"
+#import "AboutViewController.h"
+#import "ServiceViewController.h"
+#import "HistoryViewController.h"
 
-@interface LeftTableViewController () <UMSocialUIDelegate>
+@interface LeftTableViewController ()
 
 @end
 
@@ -47,13 +49,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
-    NSLog(@"*********%ld*******%ld",section,row);
     if (section == 0) {
         switch (row) {
             case 0:{
-                LoginViewController *vc = [LoginViewController shareVC];
-                [self.sideMenuViewController setContentViewController:vc.navi];
-                [self.sideMenuViewController hideMenuViewController];
+
                 break;
             }
             case 1:{
@@ -63,58 +62,45 @@
                 break;
             }
             case 2:{
-            }
-                //热门专题
-                break;
-            case 3:{
-                LoginViewController *vc = [LoginViewController shareVC];
-                [self.sideMenuViewController setContentViewController:vc.navi];
-                [self.sideMenuViewController hideMenuViewController];
-                break;
-            }
-            case 4:{
-                LoginViewController *vc = [LoginViewController shareVC];
-                [self.sideMenuViewController setContentViewController:vc.navi];
+                
+                TopicViewController *vc = [TopicViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi animated:YES
+                 ];
                 [self.sideMenuViewController hideMenuViewController];
 
             }
-                break;
-            case 5:{
-                LoginViewController *vc = [LoginViewController shareVC];
-                [self.sideMenuViewController setContentViewController:vc.navi];
+            case 3:{
+                HistoryViewController *vc = [HistoryViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi animated:YES];
                 [self.sideMenuViewController hideMenuViewController];
-                break;
+            }
+            case 4:{
+                SuggestViewController *vc = [SuggestViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi animated:YES];
+                [self.sideMenuViewController hideMenuViewController];
             }
                 break;
-            case 6:{
-                LoginViewController *vc = [LoginViewController shareVC];
-                [self.sideMenuViewController setContentViewController:vc.navi];
-                [self.sideMenuViewController hideMenuViewController];
-                break;
-            }
             default:
                 break;
         }
-    }else{
+    }else if(section == 1){
         switch (row) {
-            case 0:
-                [UMSocialSnsService presentSnsIconSheetView:kAppdelegate.window.rootViewController.view
-                                                     appKey:@"56e00d5de0f55aeb4a000f47"
-                                                  shareText:@"我正在使用手机App[关照],推荐给你"
-                                                 shareImage:[UIImage imageNamed:@"ic_launcher.png"]
-                                            shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToQQ,nil]
-                                                   delegate:self];
+            case 0:{
+                ServiceViewController *vc = [ServiceViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi animated:YES];
+                [self.sideMenuViewController hideMenuViewController];
+            }
                 break;
-            case 1:
-                
+            case 1:{
+            AboutViewController *vc = [AboutViewController shareVC];
+                [self.sideMenuViewController setContentViewController:vc.navi animated:YES];
+                [self.sideMenuViewController hideMenuViewController];
+            }
                 break;
-            case 2:
-                
+            case 2:{
+                [kAppdelegate.menu.view showWarning:@"已经更新到最新版本"];
+            }
                 break;
-            case 3:
-                
-                break;
-                
             default:
                 break;
         }

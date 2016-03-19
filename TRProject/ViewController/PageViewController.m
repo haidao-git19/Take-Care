@@ -8,6 +8,7 @@
 
 #import "PageViewController.h"
 #import "ViewController.h"
+#import "Factory.h"
 
 @interface PageViewController ()
 
@@ -18,11 +19,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"关照";
-    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"icon_drawerleft"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
-        [self.sideMenuViewController presentLeftMenuViewController];
-    }];
-    self.navigationItem.leftBarButtonItem = item;
+    [Factory addMenuItemToVC:self];
 }
 
 + (PageViewController *) shareVC{
@@ -50,7 +47,7 @@
 }
 
 - (NSString *)menuView:(WMMenuView *)menu titleAtIndex:(NSInteger)index{
-    return  self.titles[index];
+    return self.titles[index];
 }
 
 -(UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index{

@@ -10,6 +10,5 @@
 
 @interface ViewController : UIViewController
 @property (nonatomic) NSInteger categoryId;
-
 @end
 

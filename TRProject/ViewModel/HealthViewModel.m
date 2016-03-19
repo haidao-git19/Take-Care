@@ -89,42 +89,30 @@
 }
 
 - (void) getDataWithRequestModel:(RequestModel)requestModel completionHandler:(void (^)(NSError *))completionHandler{
+    NSInteger tempAddTime = 0;
+    NSInteger tempSortType = 0;
     switch (requestModel) {
         case RequestModelRefresh: {
-            _addTime = 0;
+            tempAddTime = 0;
+            tempSortType = 0;
             break;
         }
         case RequestModelMore: {
+            tempAddTime = _addTime;
+            tempSortType = 1;
             break;
         }
     }
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_addTime];
-    //实例化一个NSDateFormatter对象
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //设定时间格式,这里可以设置成自己需要的格式
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    //用[NSDate date]可以获取系统当前时间
-    NSString *currentDateStr = [dateFormatter stringFromDate:date];
-    NSLog(@"请求头:%@",currentDateStr);
-    [HealthNetManager getHealthListWithCategoryId:_categoryId addTime:_addTime completionHandler:^(HealthModel *model, NSError *error) {
+    [HealthNetManager getHealthListWithCategoryId:_categoryId addTime:tempAddTime withSortType:tempSortType completionHandler:^(HealthModel *model, NSError *error) {
         if (!error) {
             if (requestModel == RequestModelRefresh) {
                 [self.infoList removeAllObjects];
             }
+            
             NSArray *arr = model.data.info;
             [self.infoList addObjectsFromArray:arr];
-            NSLog(@"========================%ld===============",self.infoList.count);
             HealthInfoDataModel *model = self.infoList.lastObject;
             _addTime = model.articleAddTime;
-            NSLog(@"%@",model.title);
-            NSDate *date = [NSDate dateWithTimeIntervalSince1970:_addTime];
-            //实例化一个NSDateFormatter对象
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            //设定时间格式,这里可以设置成自己需要的格式
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-            //用[NSDate date]可以获取系统当前时间
-            NSString *currentDateStr = [dateFormatter stringFromDate:date];
-            NSLog(@"数据尾:%@",currentDateStr);
             completionHandler(error);
         }
     }];

@@ -11,9 +11,8 @@
 #import "HealthNetManager.h"
 #import "MessageNetManager.h"
 #import "LeftTableViewController.h"
-#import <RESideMenu.h>
 #import "LeftTableViewController.h"
-#import "UMSocialData.h"
+#import "TopicListNetManager.h"
 
 #define kAppKey @"56e00d5de0f55aeb4a000f47"
 
@@ -25,27 +24,39 @@
 //Appkey: 56e00d5de0f55aeb4a000f47
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window= [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //全局默认配置
     [self setupGlobalConfig];
+    
+    //0 1 2 18 10 15 11 5 8
+//    [HealthNetManager getHealthListWithCategoryId:0 addTime:1443403027 completionHandler:^(id model, NSError *error) {
+//        
+//        NSLog(@"asssdsdsdsdsd");
+//        
+//    }];
+    
+//    return YES;
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    [UMSocialData setAppKey:kAppKey];
     PageViewController *pageVC = [PageViewController shareVC];
     LeftTableViewController *leftVC = [LeftTableViewController shareVC];
     
-    RESideMenu *menu = [[RESideMenu alloc] initWithContentViewController:pageVC.navi leftMenuViewController:leftVC rightMenuViewController:nil];
+    _menu = [[RESideMenu alloc] initWithContentViewController:pageVC.navi leftMenuViewController:leftVC rightMenuViewController:nil];
     pageVC.menuViewStyle = WMMenuViewStyleLine;
     
-    menu.scaleContentView = NO;
-    menu.panGestureEnabled = YES;
-    menu.panGestureEnabled = YES;
-    menu.panFromEdge = NO;
-    menu.scaleMenuView= NO;
-    self.window.rootViewController = menu;
+    _menu.scaleContentView = NO;
+    _menu.panGestureEnabled = YES;
+    _menu.panGestureEnabled = YES;
+    _menu.panFromEdge = NO;
+    _menu.scaleMenuView= NO;
+    self.window.rootViewController = _menu;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
-
-- (void) showSlideMenu{
-    
+-(NSMutableArray *)history {
+    if(_history == nil) {
+        _history = [[NSMutableArray alloc] init];
+    }
+    return _history;
 }
 @end

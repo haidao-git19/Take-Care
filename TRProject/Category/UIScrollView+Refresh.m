@@ -37,6 +37,11 @@
 - (void)beginFooterRefresh{
     [self.mj_footer beginRefreshing];
 }
+
+- (void) endRefreshingWithNoMoreData{
+    [self.mj_footer endRefreshingWithNoMoreData];
+
+}
 @end
 
 

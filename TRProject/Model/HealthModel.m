@@ -16,7 +16,6 @@
 
 @end
 
-
 @implementation HealthDataModel
 
 + (NSDictionary *)objectClassInArray{
@@ -24,7 +23,6 @@
 }
 
 @end
-
 
 @implementation HealthGroupDataModel
 

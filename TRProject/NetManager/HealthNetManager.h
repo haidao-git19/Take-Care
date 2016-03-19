@@ -12,5 +12,5 @@
 
 @interface HealthNetManager : NSObject
 
-+ (id)getHealthListWithCategoryId:(NSInteger)categoryId addTime:(NSInteger)addTime completionHandler:kCompetionHandlerBlock;
++ (id)getHealthListWithCategoryId:(NSInteger)categoryId addTime:(NSInteger)addTime withSortType:(NSInteger)sortType completionHandler:kCompetionHandlerBlock;
 @end

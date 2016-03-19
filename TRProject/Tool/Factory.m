@@ -24,6 +24,14 @@
             ];
 }
 
++ (void) addMenuItemToVC:(UIViewController *)vc{
+    vc.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithImage:[UIImage imageNamed:@"icon_drawerleft"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
+        [vc.sideMenuViewController presentLeftMenuViewController];
+    }];
+    vc.navigationItem.leftBarButtonItem = item;
+}
+
 + (void)addBackItemToVC:(UIViewController *)vc{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.frame = CGRectMake(0, 0, 50, 25);
@@ -44,13 +52,10 @@
 + (void) addBackItemForFirst:(UIViewController *)vc{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 25, 25);
-    [button setBackgroundColor:[UIColor orangeColor]];
+//    [button setBackgroundColor:[UIColor orangeColor]];
     [button setImage:[UIImage imageNamed:@"icn_head_back_normal"] forState:UIControlStateNormal];
     [button bk_addEventHandler:^(id sender) {
-        
-        PageViewController *vc = [PageViewController shareVC];
-        [vc.sideMenuViewController setContentViewController:vc.navi animated:YES];
-        [vc.sideMenuViewController hideMenuViewController];
+        [vc.sideMenuViewController presentLeftMenuViewController];
     } forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithCustomView:button];
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];

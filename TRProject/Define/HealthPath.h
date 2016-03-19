@@ -13,4 +13,8 @@
 
 #define kMessagePath @"http://community.111.com.cn/Api/CommunityV1_4/user/phoneVerification"
 
+#define kTopicPath @"http://community.111.com.cn/Api/CommunityV1_4/topic/list"
+
+
+#define kTopicList @"http://gathyz.111.com.cn/guanzhaoWeb/applyEvent"
 #endif /* HealthPath_h */

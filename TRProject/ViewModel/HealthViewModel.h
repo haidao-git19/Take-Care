@@ -46,6 +46,7 @@ typedef NS_ENUM(NSUInteger, RequestModel) {
 
 @property (nonatomic) NSInteger categoryId;
 @property (nonatomic) NSInteger addTime;
+@property (nonatomic) NSInteger *sortType;
 
 - (instancetype) initWithCategoryId:(NSInteger) categoryId;
 

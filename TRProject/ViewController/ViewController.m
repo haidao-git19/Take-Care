@@ -32,10 +32,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    HealthInfoDataModel *model = [self.viewModel infoDataModelForRow:indexPath.row];
+    [kAppdelegate.history addObject:model];
     DetailViewController *vc = [DetailViewController new];
     vc.webURL = [self.viewModel infoDataURLForRow:indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
-    
 }
 
 #pragma mark - UITableViewDataSource Delegate
@@ -97,6 +99,11 @@
         
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        
+        _tableView.separatorInset = UIEdgeInsetsZero;
+        _tableView.layoutMargins = UIEdgeInsetsZero;
+        _tableView.preservesSuperviewLayoutMargins = NO;
+        
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(0);
         }];

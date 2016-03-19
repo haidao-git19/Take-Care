@@ -32,7 +32,7 @@
     [super viewDidLoad];
 
     //左上角添加自定义返回按钮
-    [Factory addBackItemToVC:self];
+    [Factory addBackItemForFirst:self];
     
     //判断网络状态
     if (!kAppdelegate.isOnLine) {

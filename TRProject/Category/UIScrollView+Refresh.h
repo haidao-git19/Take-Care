@@ -24,6 +24,8 @@
 - (void)beginHeaderRefresh;
 /** 开始脚部刷新 */
 - (void)beginFooterRefresh;
+//没有更多数据
+- (void) endRefreshingWithNoMoreData;
 @end
 
 
